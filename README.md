@@ -10,6 +10,10 @@ In order to clone the UID, you need cards with a changeable UID. For LF systems,
 ![PN532 with USB to TTL](https://github.com/nfc-tools/libnfc/assets/4102106/56ae6814-fbef-48c0-a550-48b8ad139402)
 With the PN532 rfid/nfc module connected to a usb to ttl converter, you can scan and clone rfid cards.
 
+### What you need
+[PN532 module](https://www.aliexpress.com/item/32848242166.html)
+[USB to TTL converter](https://www.aliexpress.com/item/32345829369.html)
+
 ### Connecting the PN532 to the USB/TTL converter
 1. PN532 SCL to USB TX
 2. PN532 SDA to USB RX
