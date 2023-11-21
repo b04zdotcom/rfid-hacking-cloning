@@ -31,19 +31,25 @@ sudo apt install libnfc-bin libnfc-dev libnfc5 libnfc-examples mfoc
 ```
 
 ### List
-Hold the card to the module and run
+`nfc-list` Lists available NFC devices and provides information about nearby NFC tags.
+
+Hold a card to the module and run this command.
 ```
 nfc-list
 ```
 
-### Read and save
+### Read and save (HF)
+`mfoc` Stands for "Mifare Classic Offline Cracker." It's a tool for recovering keys from Mifare Classic cards.
+
 Hold the card you want to clone to the module and run this command to save the contents of the card to a file. In this case `dump1.mfd`.
 ```
 mfoc -O dump1.mfd
 ```
 
-### Write
-Hold the writable card or tag to the module and run this command to write the contents saved in `dump1.mfd` to the new card. Use a capital `W` if you also want to overwrite the UID. Use a lowercase `w` if you want the card to keep it's original UID.
+### Write (HF)
+`nfc-mfclassic` is a utility for reading and writing HF Mifare Classic cards.
+
+Hold a writable card or tag to the module and run this command to write the contents saved in `dump1.mfd` to the new card. Use a capital `W` if you also want to overwrite the UID. Use a lowercase `w` if you want the card to keep it's original UID.
 ```
 nfc-mfclassic W a u dump1.mfd
 ```
