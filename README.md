@@ -1,10 +1,12 @@
+# Disclaimer
+This guide is for educational purposes only. The information provided is not intended for any illegal or unauthorized activities. Users are responsible for complying with local laws and regulations. The author and contributors are not liable for any misuse or legal consequences resulting from the reader's actions. Obtain necessary permissions before engaging in RFID-related activities.
+
 # RFID/NFC Hacking
-Instructions for hacking and cloning RFID cards.
-
 ## Introduction
-Low Frequency (LF) and High Frequency (HF) are two common frequency bands used in RFID access control systems. The Unique Identifier (UID) of the RFID tag or card is commonly used for authentication. The UID is a unique code assigned to each RFID tag during the manufacturing process.
+Low Frequency (LF) and High Frequency (HF) are two common frequency bands used in RFID access control systems. LF systems typically operate in the frequency range of 125 kHz to 134 kHz, while HF systems operate at 13.56 MHz. The Unique Identifier (UID) of the RFID tag or card is commonly used for authentication. The UID is a unique code assigned to each RFID tag during the manufacturing process.
 
-In order to clone the UID, you need cards with a changeable UID. For LF systems, you need a card with a T5577 chip. HF cards with a changeable UID are often called "Magic Cards". You can get them both on AliExpress.
+### Cards
+In order to clone the UID, you need cards with a changeable UID. For LF systems, you need a card with a T5577 chip. HF systems often use the Mifare Classic 1k or 4k cards. HF cards with a changeable UID are often called "Magic Cards".
 
 ## PN532 card cloning
 ![PN532 with USB to TTL](https://github.com/nfc-tools/libnfc/assets/4102106/56ae6814-fbef-48c0-a550-48b8ad139402)
