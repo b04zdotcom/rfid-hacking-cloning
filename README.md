@@ -25,7 +25,9 @@ With the PN532 rfid/nfc module connected to a usb to ttl converter, you can scan
 Set the module to UART mode by setting the onboard switch to the 0-0 position.
 
 ## libnfc
-Install the needed packages
+`libnfc` is an open-source software library and a set of utilities that facilitates communication with Near Field Communication (NFC) and Radio-Frequency Identification (RFID) devices. It supports a wide range of NFC/RFID hardware, and can be used on Linux, Windows, and macOS.
+
+Install the following packages.
 ```
 sudo apt install libnfc-bin libnfc-dev libnfc5 libnfc-examples mfoc
 ```
@@ -33,7 +35,7 @@ sudo apt install libnfc-bin libnfc-dev libnfc5 libnfc-examples mfoc
 ### List
 `nfc-list` Lists available NFC devices and provides information about nearby NFC tags.
 
-Hold a card to the module and run this command.
+Hold a card to the module and run the following command.
 ```
 nfc-list
 ```
