@@ -44,6 +44,8 @@ The communication protocol between the reader and the controller is a separate c
 
 The `Wiegand Protocol` is one of the most common communication protocols used in access control systems, due to its simplicity and reliability. It is a one-way binary communication protocol, where data is transmitted over multiple wires as sequences of 0s and 1s to convey information from RFID card readers to access control panels.
 
+A more secure alternative to the traditional Wiegand protocol, is OSDP (Open Supervised Device Protocol). OSDP is considered safer than Wiegand due to features like encryption preventing eavesdropping, bidirectional communication for advanced security, tamper detection, and modern security measures. While newer and more secure protocols are gaining popularity, you will often encounter access control systems that still utilize the Wiegand protocol.
+
 # PN532 card cloning
 ^ [Back to top](#top)
 
