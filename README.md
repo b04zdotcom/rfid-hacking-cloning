@@ -1,35 +1,54 @@
+# Table of Contents
+- [Disclaimer](#disclaimer)
+- [Introduction to RFID Access Control Systems](#introduction-to-rfid-access-control-systems)
+  - [Frequencies](#frequencies)
+  - [Passive RFID Cards](#passive-rfid-cards)
+  - [Unique Identifier](#unique-identifier)
+  - [RFID Protocols](#rfid-protocols)
+  - [Reader/Controller Communication Protocols](#readercontroller-communication-protocols)
+- [PN532 card cloning](#pn532-card-cloning)
+  - [What you need](#what-you-need)
+  - [Connecting the PN532 to the USB/TTL converter](#connecting-the-pn532-to-the-usbttl-converter)
+- [libnfc](#libnfc)
+  - [Commands](#commands)
+    - [List](#list)
+    - [Read and save (HF)](#read-and-save-hf)
+    - [Write (HF)](#write-hf)
+
+
+
 # Disclaimer
 This guide is for educational purposes only. The information provided is not intended for any illegal or unauthorized activities. Users are responsible for complying with local laws and regulations. The author and contributors are not liable for any misuse or legal consequences resulting from the reader's actions. Obtain necessary permissions before engaging in RFID-related activities.
 
 # Introduction to RFID Access Control Systems
-### Frequencies
+## Frequencies
 Low Frequency (LF) and High Frequency (HF) are two common frequency bands used in RFID access control systems. LF systems typically operate in the frequency range of 125 kHz to 134 kHz, while HF systems operate at 13.56 MHz.
 
-### Passive RFID cards
+## Passive RFID Cards
 Passive LF and HF RFID cards do not have an internal power source. When near an RFID reader, the reader inductively couples and induces power in the card's coil, activating the chip. The chip is then able to communicate with the reader by modulating its power consumption.
 
-### Unique Identifier
+## Unique Identifier
 The Unique Identifier (UID) of the RFID card is used for identification and often also for authentication and authorization. The UID is a unique code assigned to each RFID card during the manufacturing process. In order to clone the UID, you need cards with a changeable UID. For LF systems, you need a card with a `T5577` chip. HF systems often use `MIFARE Classic` cards. HF cards with a changeable UID are often called `Magic Cards`.
 
-### RFID Protocols
+## RFID Protocols
 There are many protocols with specifications and protocols that define how the RFID system operates. Here we will just focus on the `EM4100` standard for Low Frequency and the `MIFARE` standard for High Frequency.
 
 Other common RFID protocols for access control include MIFARE Ultralight, HID Prox, iCLASS, and DESFire. Each of these protocols may vary in terms of frequency and security features, catering to different requirements in access control applications.
 
-### Reader/Controller Communication Protocols
+## Reader/Controller Communication Protocols
 The communication protocol between the reader and the controller is a separate consideration and is generally determined by the design and specifications of the reader and its integration with the access control system.
 
 The `Wiegand Protocol` is one of the most common communication protocols used in access control systems, due to its simplicity and reliability. It is a one-way binary communication protocol, where data is transmitted over multiple wires as sequences of 0s and 1s to convey information from RFID card readers to access control panels.
 
-## PN532 card cloning
+# PN532 card cloning
 ![PN532 with USB to TTL](https://github.com/nfc-tools/libnfc/assets/4102106/56ae6814-fbef-48c0-a550-48b8ad139402)
-With the PN532 rfid/nfc module connected to a usb to ttl converter, you can scan and clone rfid cards.
+With the PN532 RFID module connected to a usb to ttl converter, you can scan and clone High Frequency RFID cards.
 
-### What you need
+## What you need
 1. PN532 module [AliExpress](https://www.aliexpress.com/item/32848242166.html)
 2. USB to TTL converter [AliExpress](https://www.aliexpress.com/item/32345829369.html)
 
-### Connecting the PN532 to the USB/TTL converter
+## Connecting the PN532 to the USB/TTL converter
 1. PN532 SCL to USB TX
 2. PN532 SDA to USB RX
 3. PN532 VCC to USB 5.0V
@@ -37,13 +56,15 @@ With the PN532 rfid/nfc module connected to a usb to ttl converter, you can scan
 
 Set the module to UART mode by setting the onboard switch to the 0-0 position.
 
-## libnfc
+# libnfc
 `libnfc` is an open-source software library and a set of utilities that facilitates communication with Near Field Communication (NFC) and Radio-Frequency Identification (RFID) devices. It supports a wide range of NFC/RFID hardware, and can be used on Linux, Windows, and macOS.
 
 Install the following packages.
 ```
 sudo apt install libnfc-bin libnfc-dev libnfc5 libnfc-examples mfoc
 ```
+
+## Commands
 
 ### List
 `nfc-list` Lists available NFC/RFID devices and provides information about nearby NFC/RFID cards.
