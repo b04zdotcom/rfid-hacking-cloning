@@ -8,9 +8,15 @@
   - [Unique Identifier](#unique-identifier)
   - [RFID Protocols](#rfid-protocols)
   - [Reader/Controller Communication Protocols](#readercontroller-communication-protocols)
-- [PN532 card cloning](#pn532-card-cloning)
-  - [What you need](#what-you-need)
-  - [Connecting the PN532 to the USB/TTL converter](#connecting-the-pn532-to-the-usbttl-converter)
+- [RFID Devices](#rfid-devices)
+  - [Proxmark3](#proxmark3)
+    - [Product list](#product-list)
+    - [Installation](#installation)
+  - [PN532](#pn532)
+    - [Product list](#product-list-1)
+    - [Connecting the PN532 to the USB/TTL converter](#connecting-the-pn532-to-the-usbttl-converter)
+  - [Chinese LF RFID cloner](#chinese-lf-rfid-cloner)
+    - [Product list](#product-list-2)
 - [libnfc](#libnfc)
   - [Commands](#commands)
     - [List](#list)
@@ -46,23 +52,51 @@ The `Wiegand Protocol` is one of the most common communication protocols used in
 
 A more secure alternative to the traditional Wiegand protocol, is OSDP (Open Supervised Device Protocol). OSDP is considered safer than Wiegand due to features like encryption preventing eavesdropping, bidirectional communication for advanced security, tamper detection, and modern security measures. While newer and more secure protocols are gaining popularity, you will often encounter access control systems that still utilize the Wiegand protocol.
 
-# PN532 card cloning
+# RFID Devices
 ^ [Back to top](#top)
 
-![PN532 with USB to TTL](https://github.com/nfc-tools/libnfc/assets/4102106/56ae6814-fbef-48c0-a550-48b8ad139402)
-With the PN532 RFID module connected to a usb to ttl converter, you can scan and clone High Frequency RFID cards.
+## Proxmark3
+![proxmark3](https://github.com/b04zdotcom/rfid-hacking-cloning/assets/4102106/fdabfce6-38f4-44b5-b0ca-93aa5e6d1407)
+The Proxmark3 is an open-source RFID module used for LF/HF card reading and cloning, emulating cards and RFID sniffing.
 
-## What you need
-1. PN532 module [AliExpress](https://www.aliexpress.com/item/32848242166.html)
-2. USB to TTL converter [AliExpress](https://www.aliexpress.com/item/32345829369.html)
+### Product list
+You can get a Chinese Proxmark3 Easy for $35 - $55 USD on AliExpress.
+- Proxmark3 Easy [AliExpress](https://www.aliexpress.us/item/1005005209158934.html)
 
-## Connecting the PN532 to the USB/TTL converter
+### Installation
+Install the `Iceman` client on your computer and the firmware on your Proxmark3 device. Go to the [Proxmark3 Iceman Fork repository](https://github.com/RfidResearchGroup/proxmark3/tree/master#proxmark3-installation-and-overview) and follow the installation instructions for your operating system.
+
+If you are using the Chinese Proxmark3 Easy listed above, compile the firmware using the `PLATFORM=PM3GENERIC` platform parameter in your `Makefile.platform` file.
+
+You can copy the Makefile.platform sample using the following command.
+```
+cp Makefile.platform.sample Makefile.platform
+```
+
+## PN532
+![PN532 with USB to TTL](https://github.com/b04zdotcom/rfid-hacking-cloning/assets/4102106/597f6508-e4bd-44d0-b92f-370498a70530)
+
+With the PN532 RFID module connected to a usb to ttl converter, you can scan and clone High Frequency RFID cards using the `libnfc` library.
+
+### Product list
+- PN532 module [AliExpress](https://www.aliexpress.com/item/32848242166.html)
+- USB to TTL converter [AliExpress](https://www.aliexpress.com/item/32345829369.html)
+
+### Connecting the PN532 to the USB/TTL converter
 1. PN532 SCL to USB TX
 2. PN532 SDA to USB RX
 3. PN532 VCC to USB 5.0V
 4. PN532 GND to USB GND
 
 Set the module to UART mode by setting the onboard switch to the 0-0 position.
+
+## Chinese LF RFID cloner
+![RFID-cloner](https://github.com/b04zdotcom/rfid-hacking-cloning/assets/4102106/c4bb2576-ac8a-400a-a6c6-e0653f0f377e)
+
+This is the easiest and cheapest way to get started cloning Low Frequency RFID cards and tags. Just hold the card you want to clone in front of the device and press "READ". Next, hold your LF card with changeable UID in front of the device and press "WRITE".
+
+### Product list
+- LF RFID cloner [AliExpress](https://www.aliexpress.com/item/1005005316016488.html)
 
 # libnfc
 ^ [Back to top](#top)
