@@ -17,7 +17,7 @@
     - [Connecting the PN532 to the USB/TTL converter](#connecting-the-pn532-to-the-usbttl-converter)
   - [Chinese LF RFID cloner](#chinese-lf-rfid-cloner)
     - [Product list](#product-list-2)
-- [libnfc](#libnfc)
+- [libnfc library](#libnfc-library)
   - [Commands](#commands)
     - [List](#list)
     - [Read and save (HF)](#read-and-save-hf)
@@ -76,7 +76,7 @@ cp Makefile.platform.sample Makefile.platform
 ## PN532
 ![PN532 with USB to TTL](https://github.com/b04zdotcom/rfid-hacking-cloning/assets/4102106/597f6508-e4bd-44d0-b92f-370498a70530)
 
-With the PN532 RFID module connected to a usb to ttl converter, you can scan and clone High Frequency RFID cards using the `libnfc` library.
+With the PN532 RFID module connected to a usb to ttl converter, you can scan and clone High Frequency RFID cards using the [libnfc library](#libnfc-library).
 
 ### Product list
 - PN532 module [AliExpress](https://www.aliexpress.com/item/32848242166.html)
@@ -98,7 +98,7 @@ This is the easiest and cheapest way to get started cloning Low Frequency RFID c
 ### Product list
 - LF RFID cloner [AliExpress](https://www.aliexpress.com/item/1005005316016488.html)
 
-# libnfc
+# libnfc library
 ^ [Back to top](#top)
 
 `libnfc` is an open-source software library and a set of utilities that facilitates communication with Near Field Communication (NFC) and Radio-Frequency Identification (RFID) devices. It supports a wide range of NFC/RFID hardware, and can be used on Linux, Windows, and macOS.
