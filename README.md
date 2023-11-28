@@ -105,7 +105,7 @@ This is the easiest and cheapest way to get started cloning Low Frequency RFID c
 
 Install the following packages.
 ```
-sudo apt install libnfc-bin libnfc-dev libnfc5 libnfc-examples mfoc
+sudo apt install libnfc-bin libnfc-dev mfoc
 ```
 
 ## Commands
